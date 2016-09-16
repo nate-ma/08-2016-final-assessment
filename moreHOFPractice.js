@@ -10,11 +10,25 @@ find(list, predicate)
 
 Write an example of how you would call 'find', passing in whatever truth test you'd like and whatever sample list you want to make up. Write as a comment what you expect your example would return.
 
+var testArr = [1, 3, 5, 7, 10, 12, 14, 15]
+
+find(testArr, function(num){
+	return num % 2 === 0;
+	//if(num % 2 === 0)
+		//return true;
+});
+
+// This function should return 10 as it is the first number which passes the test.
+// The function will break out and not traverse the rest of the array, so it will not return anything else.
+
 
 
 2. Here is a higher-order function defined for you:
+// A variale uniq is declared as a function which takes in an array as a parameter.
 var uniq = function(array) {
+  // The filter method is being used on the input array.
   return array.filter(function(element, index){
+  	// The callback function for the filter method 
     var state = false;
     for (var j=0; j < index; j++){
       if (array[j] === element){
@@ -42,5 +56,16 @@ d) In english, explain how this function works, as documentation would (see the 
 
 3. Write a function 'reject', which takes in an array, and passes each element and index of the array into a callback function. Return an array of just the elements for which the callback returned false.
 
+var reject = function(array, callback){
+	var results = [];
+	array.forEach(function(element, index){
+		if(callback(element) === false){
+			results.push(element);
+		}
+	})
+	return results;
+};
 
 */ 
+
+
