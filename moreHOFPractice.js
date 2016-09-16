@@ -26,15 +26,19 @@ find(testArr, function(num){
 2. Here is a higher-order function defined for you:
 // A variale uniq is declared as a function which takes in an array as a parameter.
 var uniq = function(array) {
-  // The filter method is being used on the input array.
+  // This function returns an array.
+  // This array has the filter function being called on it.
   return array.filter(function(element, index){
-  	// The callback function for the filter method 
+  	// The callback function for the filter method initially declares a var state with a boolean value of false.
     var state = false;
+    // Each element in the array is looped through. j < index
     for (var j=0; j < index; j++){
+      // If value of array[j] has the same value of the element at a specific interation, the value of state is overwritten to be true.
       if (array[j] === element){
         state = true;
       }
     }
+    // 
     return state === false;
   });
 };
